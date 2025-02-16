@@ -1,4 +1,12 @@
 - Extract the code in the setTimeout function and replace the setTimeout function  with the extracted code. Then run the main script. 
 - Is there a difference in the flow of execution from when the code was in the setTimeout function?
-- Is the flow of execution in both these examples different from the flow of execution with the examples using the fetch() API, which also returns a promise? 
+    Yes, there is a difference in the execution.
+- Is the flow of execution in both these examples different from the flow of execution with the examples using the fetch() API, which also returns a promise?
+    Yes, there is a difference in both the examples
 - If yes, explain the code execution difference. Add your explanation to this file.
+    When the code has a setTimeout in its promise the flow of execution is different to that of the fetch() example.
+    The setTimeout code is printed last and other log messages (in the promise) are printed before that.
+    So the order of priority is Sync code -> promise code -> setTimeout.
+
+    When the code does not have a setTimeout in the promise, the order of execution is the same which is
+    sync code -> promise output
